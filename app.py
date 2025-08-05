@@ -12,7 +12,7 @@ exa = Exa(api_key = exa_api)
 from openai import OpenAI
 client = OpenAI(
     base_url = "https://api.exa.ai",
-    api_key = "1bf7c651-3c14-4128-a425-6863c1fd6d5a",
+    api_key = exa_api,
 )
 
 from typing import TypedDict, List, Dict
@@ -284,4 +284,5 @@ def voice_to_text():
         return jsonify({'error': 'STT failed', 'details': str(e)}), 500
     
 if __name__ == "__main__":
+
     app.run(debug=True)
